@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+控制器当前时间：{{ nowTime }}<br/>
+中间角度：{{ center }}
+
+<hr/>
+<form action="/maxLeft/" method="get">
+    最大逆时针旋转（左转）极限角度： <input type="text" name="value" value="{{ maxLeft }}">
+    <input type="submit" value="修改">
+</form>
+<hr/>
+<form action="/maxRight/" method="get">
+    最大顺时针旋转（右转）极限角度： <input type="text" name="value" value="{{ maxRight }}">
+    <input type="submit" value="修改">
+</form>
+
+
+
+</body>
+</html>
