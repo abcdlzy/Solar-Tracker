@@ -184,8 +184,8 @@ def run():
             print(dawn)
             print("calc_sunset")
             print(sunset)
-            #time.sleep(600)
-            #break
+        #time.sleep(600)
+        #break
         elif now>dawn and now<sunset:
             print("RUN_dawn")
             print(dawn)
@@ -193,29 +193,43 @@ def run():
             print(sunset)
             #isRunnedToday=True
             if(getNowAzimuth()>(getCenterAzimuth()+getSolarAzimuth(now)+5)):
-                print("debug-runLeft")
+                print("debug-run-Left")
                 turnLeft()
+                time.sleep(0.1)
             elif(getNowAzimuth()<(getCenterAzimuth()+getSolarAzimuth(now))):
                 print("debug-run-Right")
                 turnRight()
+                time.sleep(0.1)
             elif(getNowAzimuth()>(getCenterAzimuth()+getSolarAzimuth(now))):
                 print("debug-run-stop")
                 turnOff()
-            #print(getSolarAzimuth(now))
-            #print(getNowAzimuth())
-            #print(getNowAzimuth()-(getCenterAzimuth()+getSolarAzimuth(now)))
-
-            #print("z:"+str(getSolarAzimuth(now)))
-            #print("l:"+str(getSolarAltitude(now)))
-            time.sleep(0.5)
+                time.sleep(30)
+        #print(getSolarAzimuth(now))
+        #print(getNowAzimuth())
+        #print(getNowAzimuth()-(getCenterAzimuth()+getSolarAzimuth(now)))
+        
+        #print("z:"+str(getSolarAzimuth(now)))
+        #print("l:"+str(getSolarAltitude(now)))
+        #time.sleep(0.5)
         else:
             print("wait-dawn")
             print(dawn)
             print("wait-sunset")
             print(sunset)
-            time.sleep(600)
+            if(getNowAzimuth()>(getCenterAzimuth()+5)):
+                print("debug-wait-Left")
+                turnLeft()
+                time.sleep(0.1)
+            elif(getNowAzimuth()<(getCenterAzimuth())):
+                print("debug-wait-Right")
+                turnRight()
+                time.sleep(0.1)
+            elif(getNowAzimuth()>(getCenterAzimuth())):
+                print("debug-wait-stop")
+                turnOff()
+                time.sleep(30)
 
 
- 
+
 run()
 
