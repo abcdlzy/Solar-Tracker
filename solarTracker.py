@@ -133,7 +133,7 @@ def doCale_DawnAndSunset(getTime):
     global now
     today = getTime
     midnight = datetime.datetime(today.year, today.month, today.day, 0, 0, 0)-datetime.timedelta(hours=8)
-    nextDayMidNight=datetime.datetime(today.year, today.month, today.day+1, 0, 0, 0)-datetime.timedelta(hours=8)
+    nextDayMidNight=datetime.datetime(today.year, today.month, today.day, 0, 0, 0)+datetime.timedelta(days=1)-datetime.timedelta(hours=8)
     isFoundDawn=False
     isFoundSunset=False
     print('midNIght')
